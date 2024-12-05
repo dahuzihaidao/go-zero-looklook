@@ -132,6 +132,18 @@ services:
     depends_on:
       - kafka
 
+  # zookeeper是kafka的依赖 - Zookeeper is the dependencies of Kafka; 使用最新版本则可以不用zookeeper
+  # zookeeper:
+  #   image: wurstmeister/zookeeper
+  #   container_name: zookeeper
+  #   environment:
+  #     # 时区上海 - Time zone Shanghai (Change if needed)
+  #     TZ: Asia/Shanghai
+  #   restart: always
+  #   ports:
+  #     - 2181:2181
+  #   networks:
+  #     - looklook_net
 
   #消息队列 - Message queue
   kafka:
@@ -177,7 +189,7 @@ services:
       - redis
 
   mysql:
-    image: mysql/mysql-server:8.0.28
+    image: mysql:8.0.33
     container_name: mysql
     environment:
       # 时区上海 - Time zone Shanghai (Change if needed)
