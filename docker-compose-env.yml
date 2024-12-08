@@ -188,6 +188,13 @@ services:
     depends_on:
       - redis
 
+  # docker exec -it mysql mysql -uroot -p -P 33069 -h localhost
+  # docker exec -it mysql mysql -uroot -pPXDN93VRKUm8TeE7 -P 33069 -h localhost -e "create database looklook_order character set utf8mb4 collate utf8mb4_unicode_ci;"
+  # docker cp deploy/sql/looklook_order.sql mysql:/tmp/looklook_order.sql
+  # docker exec -i mysql mysql -uroot -pPXDN93VRKUm8TeE7 -P 33069 -h localhost looklook_order < deploy/sql/looklook_order.sql
+  # docker exec -i mysql mysql -uroot -pPXDN93VRKUm8TeE7 -P 33069 -h localhost looklook_payment  < deploy/sql/looklook_payment.sql
+  # docker exec -i mysql mysql -uroot -pPXDN93VRKUm8TeE7 -P 33069 -h localhost looklook_travel  < deploy/sql/looklook_travel.sql
+  # docker exec -i mysql mysql -uroot -pPXDN93VRKUm8TeE7 -P 33069 -h localhost looklook_usercenter < deploy/sql/looklook_usercenter.sql
   mysql:
     image: mysql:8.0.33
     container_name: mysql
