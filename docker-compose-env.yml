@@ -252,6 +252,3 @@ networks:
         - subnet: 172.16.0.0/16
     external: true
 
-
-# cd go-zero-looklook/app/usercenter/cmd/api/desc
-#  goctl api go -api *.api -dir ../  -style=goZero --home=../../../../../../deploy/goctl/1.7.3/
