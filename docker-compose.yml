@@ -1,5 +1,3 @@
-version: '3'
-
 ######## app下api+rpc ,  Before starting this project, start the environment that the project depends on docker-compose-env.yml #######
 
 services:
@@ -43,8 +41,9 @@ services:
 
 networks:
   looklook_net:
-    driver: bridge
-    ipam:
-      config:
-        - subnet: 172.20.0.0/16
+    external: true
+    # driver: bridge
+    # ipam:
+    #   config:
+    #     - subnet: 172.20.0.0/16
 
