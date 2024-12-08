@@ -195,6 +195,9 @@ services:
   # docker exec -i mysql mysql -uroot -pPXDN93VRKUm8TeE7 -P 33069 -h localhost looklook_payment  < deploy/sql/looklook_payment.sql
   # docker exec -i mysql mysql -uroot -pPXDN93VRKUm8TeE7 -P 33069 -h localhost looklook_travel  < deploy/sql/looklook_travel.sql
   # docker exec -i mysql mysql -uroot -pPXDN93VRKUm8TeE7 -P 33069 -h localhost looklook_usercenter < deploy/sql/looklook_usercenter.sql
+  # use mysql;
+  # update user set host='%' where user='root';
+  # FLUSH PRIVILEGES;
   mysql:
     image: mysql:8.0.33
     container_name: mysql
@@ -248,3 +251,7 @@ networks:
       config:
         - subnet: 172.16.0.0/16
     external: true
+
+
+# cd go-zero-looklook/app/usercenter/cmd/api/desc
+#  goctl api go -api *.api -dir ../  -style=goZero --home=../../../../../../deploy/goctl/1.7.3/
