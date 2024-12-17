@@ -22,6 +22,7 @@ services:
       - looklook
 
   #前端api + 业务rpc - Front-end API + business RPC
+  # docker exec -it looklook sh
   looklook:
     # docker-hub : https://hub.docker.com/r/lyumikael/gomodd
     # dockerfile: https://github.com/Mikaelemmmm/gomodd
